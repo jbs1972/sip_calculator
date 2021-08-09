@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.4.0/Chart.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css" />
+    <title>My SIP Calculator</title>
+  </head>
+  <body>
+    <div class="container py-3">
+      <div class="row">
+        <div class="col-sm-6 border border-primary">
+          <div class="page-header" style="margin-top: 2.5em">
+            <h1>My SIP Calculator</h1>
+          </div>
+          <div class="range_label">
+            <span class="badge badge-primary" id="mi"></span>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="500"
+                max="200000"
+                value="25000"
+                class="slider"
+                id="monthlyInvest"
+                name="arr[]"
+                step="500"
+              />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Monthly Invest</span
+                >
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                aria-label="Monthly Invest"
+                aria-describedby="inputGroup-sizing-sm"
+                min="500"
+                max="200000"
+                step="500"
+                value="25000"
+                id="monthlyInvestTB"
+              />
+            </div>
+          </div>
+          <div class="range_label">
+            <span class="badge badge-primary" id="err"></span>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="1"
+                max="30"
+                value="12"
+                class="slider"
+                id="expectedReturnRate"
+                name="arr[]"
+              />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Expected Return Rate</span
+                >
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                aria-label="Expected Return Rate"
+                aria-describedby="inputGroup-sizing-sm"
+                min="1"
+                max="30"
+                value="12"
+                id="expectedReturnRateTB"
+              />
+            </div>
+          </div>
+          <div class="range_label">
+            <span class="badge badge-primary" id="tp"></span>
+            <div class="slidecontainer">
+              <input
+                type="range"
+                min="1"
+                max="30"
+                value="10"
+                class="slider"
+                id="timePeriod"
+                name="arr[]"
+              />
+            </div>
+            <div class="input-group input-group-sm mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="inputGroup-sizing-sm"
+                  >Time Period</span
+                >
+              </div>
+              <input
+                type="number"
+                class="form-control"
+                aria-label="Time Period"
+                aria-describedby="inputGroup-sizing-sm"
+                min="1"
+                max="30"
+                value="10"
+                id="timePeriodTB"
+              />
+            </div>
+          </div>
+          <div class="result">
+            <div class="py-1">
+              <span class="badge badge-info w-50">Invested Amount</span>
+              <span class="badge badge-pill badge-light" id="ia"
+                >₹30,00,000</span
+              >
+            </div>
+            <div class="py-1">
+              <span class="badge badge-info w-50">Est. Returns</span>
+              <span class="badge badge-pill badge-light" id="er"
+                >₹28,08,477</span
+              >
+            </div>
+            <div class="py-1">
+              <span class="badge badge-info w-50">Total Value</span>
+              <span class="badge badge-pill badge-light" id="tv"
+                >₹58,08,477</span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="col-sm-6">
+          <div class="card">
+            <div class="card-body">
+              <canvas id="chDonut1"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/main.js"></script>
+  </body>
+</html>
